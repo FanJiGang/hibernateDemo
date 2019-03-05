@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- 
+		class元素设置了对象和表的关系；
+		name指定了对象的类型名；
+		table指定了表名；
+	 -->
+	
+	<class name="cn.tedu.entity.User" table="cn_user">
+		<!-- 
+			id用于映射主键字段和属性的对应关系；
+			name指定了属性名；
+			column指定了字段名；
+			type指定了属性和字段转换时需要的类型；
+		 -->
+		<id name="id" column="cn_user_id">
+			<!-- 用来指明主键的生成方式 
+			<generator class="sequence">
+				<param name="sequence">
+					emp_seq
+				</param>
+			</generator>
+			-->
+		</id>
+		<!-- property用于映射普通字段和属性的关系 -->
+		<property name="name" column="cn_user_name"/>
+		<property name="password" column="cn_user_password"/>
+		<property name="token" column="cn_user_token"/>
+		<property name="nick" column="cn_user_nick"/>
+	</class>
+</hibernate-mapping>
